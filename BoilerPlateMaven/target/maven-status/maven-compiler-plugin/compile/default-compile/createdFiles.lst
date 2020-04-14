@@ -1,1 +1,4 @@
+lessons\LessonsConfiguration.class
+lessons\services\GreetingService.class
+lessons\services\GreetingServiceImpl.class
 ru\sberbank\mavenboilerplateapp\App.class
