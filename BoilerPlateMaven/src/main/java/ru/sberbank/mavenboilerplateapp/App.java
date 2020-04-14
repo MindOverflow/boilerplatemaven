@@ -5,8 +5,8 @@ import lessons.LessonsConfiguration;
 import lessons.services.GreetingService;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.AbstractApplicationContext;
 
 /**
  * Полное описание примера:
@@ -19,8 +19,9 @@ public class App
     public static void main(String[] args) {
         logger.info("Старт конфигурации");
 
-        ApplicationContext context = new AnnotationConfigApplicationContext(LessonsConfiguration.class);
+        AbstractApplicationContext context = new AnnotationConfigApplicationContext(LessonsConfiguration.class);
         GreetingService greetingService = context.getBean(GreetingService.class);
         logger.info(greetingService.sayGreeting());
+        context.registerShutdownHook();
     }
 }
