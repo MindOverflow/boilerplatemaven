@@ -3,6 +3,7 @@ package lessons;
 import lessons.services.GreetingService;
 import lessons.services.GreetingServiceImpl;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Description;
 
@@ -10,6 +11,7 @@ import org.springframework.context.annotation.Description;
  * Конфигурационный класс Spring IoC Container'a
  */
 @Configuration
+@ComponentScan
 public class LessonsConfiguration {
     @Bean
     @Description("Текстовое описание бина greetingService")
