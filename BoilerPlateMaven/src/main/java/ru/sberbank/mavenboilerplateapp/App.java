@@ -1,12 +1,13 @@
 package ru.sberbank.mavenboilerplateapp;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
- * Hello world!
- *
+ * Hello World my dear Slf4j!
  */
-public class App 
-{
-    public static void main( String[] args ) {
-        System.out.println( "Hello World!" );
+@Slf4j
+public class App {
+    public static void main(String[] args) {
+        log.info("Hello World!");
     }
 }
