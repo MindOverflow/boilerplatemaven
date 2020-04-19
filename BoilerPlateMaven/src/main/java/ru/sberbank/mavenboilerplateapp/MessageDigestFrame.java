@@ -207,10 +207,10 @@ class MessageDigestFrame extends JFrame {
         log.info("MessageDigestFrame.computeDigest(); Длина hash массива байтов = " + hash.length);
         // Строковое представление цифровой подписи, которое необходимо вывести на экран в окно нашей программы
         String hexadecimalNumberStringRepresentation = "";
-        for (int i = 0; i < hash.length; i++) {
-            log.info("MessageDigestFrame.computeDigest(); байто = " + hash[i]);
-            int value = hash[i] & 0xFF;
-            log.info("MessageDigestFrame.computeDigest(); Битовое \"И\": " + hash[i]);
+        for (byte b : hash) {
+            log.info("MessageDigestFrame.computeDigest(); байто = " + b);
+            int value = b & 0xFF;
+            log.info("MessageDigestFrame.computeDigest(); Битовое \"И\": " + b);
             // Если в результате битового "И" величины hash[i] и числа 0xFF (255) -- это по сути 16 бит, занятых
             // единицами. Если вычисленное значение в целом десятичном представлении меньше 16, то тогда необходимо
             // добавить в строковом представлении нолик вперёд полченного значения. В шестнадцатеричных F то же,
@@ -223,7 +223,7 @@ class MessageDigestFrame extends JFrame {
             hexadecimalNumberStringRepresentation += Integer.toString(value, 16).toUpperCase() + " ";
 
             log.info("MessageDigestFrame.computeDigest();\n hexadecimalNumberStringRepresentation = " +
-                hexadecimalNumberStringRepresentation);
+                    hexadecimalNumberStringRepresentation);
 
             digest.setText(hexadecimalNumberStringRepresentation);
         }
