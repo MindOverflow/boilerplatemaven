@@ -40,7 +40,7 @@ class MessageDigestFrame extends JFrame {
     public MessageDigestFrame() {
         log.info("ctor MessageDigestFrame();");
 
-        setTitle("MessageDigestFrame");
+        setTitle("Вычисление цифрового отпечатака сообщения");
         setSize(DEFAULT_WIDTH, DEFAULT_HEIGHT);
 
         // Панель, содержащая кнопки выбора метода шифрования
@@ -208,7 +208,7 @@ class MessageDigestFrame extends JFrame {
         // Строковое представление цифровой подписи, которое необходимо вывести на экран в окно нашей программы
         String hexadecimalNumberStringRepresentation = "";
         for (int i = 0; i < hash.length; i++) {
-            log.info("MessageDigestFrame.computeDigest(); байтов = " + hash[i]);
+            log.info("MessageDigestFrame.computeDigest(); байто = " + hash[i]);
             int value = hash[i] & 0xFF;
             log.info("MessageDigestFrame.computeDigest(); Битовое \"И\": " + hash[i]);
             // Если в результате битового "И" величины hash[i] и числа 0xFF (255) -- это по сути 16 бит, занятых
