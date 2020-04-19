@@ -23,7 +23,7 @@ import java.util.Arrays;
 class MessageDigestFrame extends JFrame {
     // Параметры окна:
     // Ширина окна
-    private static final int DEFAULT_WIDTH = 400;
+    private static final int DEFAULT_WIDTH = 460;
     // Длина окна
     private static final int DEFAULT_HEIGHT = 300;
 
@@ -205,7 +205,7 @@ class MessageDigestFrame extends JFrame {
         // Строковое представление цифровой подписи, которое необходимо вывести на экран в окно нашей программы
         String hexadecimalNumberStringRepresentation = "";
         for (byte b : hash) {
-            log.info("MessageDigestFrame.computeDigest(); байто = " + b);
+            log.info("MessageDigestFrame.computeDigest(); байт = " + b);
             int value = b & 0xFF;
             log.info("MessageDigestFrame.computeDigest(); Битовое \"И\": " + b);
             // Если в результате битового "И" величины hash[i] и числа 0xFF (255) -- это по сути 16 бит, занятых
