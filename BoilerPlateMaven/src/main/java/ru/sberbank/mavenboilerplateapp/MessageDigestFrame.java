@@ -37,7 +37,7 @@ class MessageDigestFrame extends JFrame {
     /**
      * ctor
      */
-    public MessageDigestFrame() {
+    MessageDigestFrame() {
         log.info("ctor MessageDigestFrame();");
 
         setTitle("Вычисление цифрового отпечатака сообщения");
@@ -162,8 +162,7 @@ class MessageDigestFrame extends JFrame {
      */
     private byte[] loadBites(String absoluteFilePath) throws IOException {
         log.info("MessageDigestFrame.loadBites()");
-        FileInputStream fileInputStream = new FileInputStream(absoluteFilePath);
-        try {
+        try (FileInputStream fileInputStream = new FileInputStream(absoluteFilePath)) {
             ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
             /*
              * The read() method of a FileInputStream returns an int which contains the byte value of the byte read.
@@ -185,10 +184,8 @@ class MessageDigestFrame extends JFrame {
             log.info("MessageDigestFrame.loadBites(); Число байт в массиве = " + byteArray.length);
 
             return byteArray;
-        }
-        finally {
+        } finally {
             log.info("MessageDigestFrame.loadBites(); Выполнение блока finally");
-            fileInputStream.close();
         }
     }
 
