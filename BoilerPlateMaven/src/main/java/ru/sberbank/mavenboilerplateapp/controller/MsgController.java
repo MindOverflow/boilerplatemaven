@@ -18,7 +18,7 @@ public class MsgController {
     // Чтобы отправлять сообщения, требуется объект KafkaTemplate<K, V>
     // V - в данном случае будет тип сообщения продюсера
     @Autowired
-    private KafkaTemplate<String, String> kafkaTemplate;
+    private KafkaTemplate<Long, String> kafkaTemplate;
 
     /**
      * @method
@@ -27,12 +27,12 @@ public class MsgController {
      * @param msg - сообщение, которое публикует издатель
      */
     @PostMapping
-    public void sendMessage(String msgId, String msg) {
+    public void sendMessage(Long msgId, String msg) {
         log.info("Идентификатор сообщения: " + msgId);
         log.info("Сообщение с клиента: " + msg);
 
         // "msg" - название топика, который может не существовать. Если не существует, создаётся автоматом.
-        ListenableFuture<SendResult<String, String>> future = kafkaTemplate.send("msg", msgId, msg);
+        ListenableFuture<SendResult<Long, String>> future = kafkaTemplate.send("msg", msgId, msg);
 
         future.addCallback(System.out::println, System.err::println);
         kafkaTemplate.flush();

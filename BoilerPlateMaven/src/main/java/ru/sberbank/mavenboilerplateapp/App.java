@@ -10,7 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * Hello World my dear Kafka!
  */
 @Slf4j
-@SpringBootApplication
+@SpringBootApplication()
 public class App {
     public static void main(String[] args) {
         log.info("Инициализация в методе main приложения");
