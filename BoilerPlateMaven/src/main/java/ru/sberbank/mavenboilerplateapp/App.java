@@ -1,5 +1,6 @@
 // Пример взят из статьи:
 // https://m.habr.com/ru/post/496182/
+// https://habr.com/ru/post/496182/
 package ru.sberbank.mavenboilerplateapp;
 
 import lombok.extern.slf4j.Slf4j;
