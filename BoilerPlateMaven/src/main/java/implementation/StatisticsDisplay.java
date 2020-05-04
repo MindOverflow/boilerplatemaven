@@ -9,14 +9,12 @@ import java.util.Observer;
 
 @Slf4j
 public class StatisticsDisplay implements Observer, DisplayElement {
-    private Observable observable;
     private float minTemp = 200f;
     private float maxTemp = 0.0f;
     private float sumTemp = 0.0f;
     private int numReadings;
 
     public StatisticsDisplay(Observable observable) {
-        this.observable = observable;
         observable.addObserver(this);
     }
 

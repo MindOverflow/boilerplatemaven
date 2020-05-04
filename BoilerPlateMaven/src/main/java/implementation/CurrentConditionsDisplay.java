@@ -9,12 +9,10 @@ import lombok.var;
 
 @Slf4j
 public class CurrentConditionsDisplay implements Observer, DisplayElement {
-    private Observable observable;
     private float temperature;
     private float humidity;
 
     public CurrentConditionsDisplay(Observable observable) {
-        this.observable = observable;
         observable.addObserver(this);
     }
 

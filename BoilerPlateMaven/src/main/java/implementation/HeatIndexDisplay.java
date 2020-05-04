@@ -9,11 +9,9 @@ import java.util.Observer;
 
 @Slf4j
 public class HeatIndexDisplay implements Observer, DisplayElement {
-    private Observable observable;
     private float heatIndex = 0.0f;
 
     public HeatIndexDisplay(Observable observable) {
-        this.observable = observable;
         observable.addObserver(this);
     }
 
