@@ -1,24 +1,31 @@
 package implementation;
 
 import abstraction.DisplayElement;
-import abstraction.Observer;
-import abstraction.Subject;
 import lombok.extern.slf4j.Slf4j;
+import lombok.var;
+
+import java.util.Observable;
+import java.util.Observer;
 
 @Slf4j
 public class HeatIndexDisplay implements Observer, DisplayElement {
-    float heatIndex = 0.0f;
-    private Subject weatherData;
+    private Observable observable;
+    private float heatIndex = 0.0f;
 
-    public HeatIndexDisplay(Subject weatherData) {
-        this.weatherData = weatherData;
-        weatherData.registerObserver(this);
+    public HeatIndexDisplay(Observable observable) {
+        this.observable = observable;
+        observable.addObserver(this);
     }
 
     @Override
-    public void update(float t, float rh, float pressure) {
-        heatIndex = computeHeatIndex(t, rh);
-        display();
+    public void update(Observable observable, Object args) {
+        if (observable instanceof WeatherData) {
+            var weatherData = (WeatherData)observable;
+            var t = weatherData.getTemperature();
+            var rh = weatherData.getHumidity();
+            heatIndex = computeHeatIndex(t, rh);
+            display();
+        }
     }
 
     @Override

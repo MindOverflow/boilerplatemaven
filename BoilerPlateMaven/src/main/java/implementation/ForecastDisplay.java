@@ -1,35 +1,31 @@
 package implementation;
 
 import abstraction.DisplayElement;
-import abstraction.Observer;
-import abstraction.Subject;
 import lombok.extern.slf4j.Slf4j;
 import lombok.var;
 
+import java.util.Observable;
+import java.util.Observer;
+
 @Slf4j
 public class ForecastDisplay implements Observer, DisplayElement {
+    private Observable observable;
     private float currentPressure = 29.92f;
     private float lastPressure;
-    private float temperature;
-    private float humidity;
-    private float pressure;
 
-    private Subject weatherData;
-
-    public ForecastDisplay(Subject weatherData) {
-        this.weatherData = weatherData;
-        weatherData.registerObserver(this);
+    public ForecastDisplay(Observable observable) {
+        this.observable = observable;
+        observable.addObserver(this);
     }
 
     @Override
-    public void update(float temperature, float humidity, float pressure) {
-        this.temperature = temperature;
-        this.humidity = humidity;
-        this.pressure = pressure;
-
-        this.lastPressure = currentPressure;
-        this.currentPressure = pressure;
-        display();
+    public void update(Observable observable, Object arg) {
+        if (observable instanceof WeatherData) {
+            var weatherData = (WeatherData)observable;
+            this.lastPressure = currentPressure;
+            this.currentPressure = weatherData.getPressure();
+            display();
+        }
     }
 
     @Override
