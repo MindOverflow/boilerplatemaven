@@ -6,13 +6,9 @@ import java.lang.reflect.*;
 import java.util.Arrays;
 import java.util.Scanner;
 
-/**
- * Hello World my dear Slf4j!
- */
 @Slf4j
 public class App {
     public static void main(String[] args) {
-        log.info("Hello World!");
         String name;
         if (args.length > 0) {
             name = args[0];
@@ -23,38 +19,38 @@ public class App {
         }
 
         try {
-            Class cl = Class.forName(name);
-            printClass(cl);
-            for (Method m : cl.getDeclaredMethods()) {
-                printMethod(m);
+            Class clazz = Class.forName(name);
+            printClass(clazz);
+            for (Method method : clazz.getDeclaredMethods()) {
+                printMethod(method);
             }
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
+        } catch (ClassNotFoundException classNotFoundException) {
+            classNotFoundException.printStackTrace();
         }
     }
 
-    public static void printClass(Class cl) {
-        System.out.print(cl);
-        printTypes(cl.getTypeParameters(), "<", ", ", ">", true);
-        Type sc = cl.getGenericSuperclass();
-        if (sc != null) {
+    public static void printClass(Class clazz) {
+        System.out.print(clazz);
+        printTypes(clazz.getTypeParameters(), "<", ", ", ">", true);
+        Type genericSuperclass = clazz.getGenericSuperclass();
+        if (genericSuperclass != null) {
             System.out.print(" extends ");
-            printType(sc, false);
+            printType(genericSuperclass, false);
         }
-        printTypes(cl.getGenericInterfaces(), " implements ", ", ", "", false);
+        printTypes(clazz.getGenericInterfaces(), " implements ", ", ", "", false);
         System.out.println();
     }
 
-    public static void printMethod(Method m) {
-        String name = m.getName();
-        System.out.print(Modifier.toString(m.getModifiers()));
+    public static void printMethod(Method method) {
+        String name = method.getName();
+        System.out.print(Modifier.toString(method.getModifiers()));
         System.out.print(" ");
-        printTypes(m.getTypeParameters(), "<", ", ", ">", true);
-        printType(m.getGenericReturnType(), false);
+        printTypes(method.getTypeParameters(), "<", ", ", ">", true);
+        printType(method.getGenericReturnType(), false);
         System.out.print(" ");
         System.out.print(name);
         System.out.print("(");
-        printTypes(m.getGenericParameterTypes(), "", ", ", "", false);
+        printTypes(method.getGenericParameterTypes(), "", ", ", "", false);
         System.out.println(")");
     }
 
@@ -78,32 +74,32 @@ public class App {
 
     public static void printType(Type type, boolean isDefinition) {
         if (type instanceof Class) {
-            Class t = (Class) type;
-            System.out.print(t.getName());
+            Class clazz = (Class) type;
+            System.out.print(clazz.getName());
         } else if (type instanceof TypeVariable) {
-            TypeVariable t = (TypeVariable) type;
-            System.out.print(t.getName());
+            TypeVariable typeVariable = (TypeVariable) type;
+            System.out.print(typeVariable.getName());
             if (isDefinition) {
-                printTypes(t.getBounds(), " extends ", " & ", "", false);
+                printTypes(typeVariable.getBounds(), " extends ", " & ", "", false);
             }
         } else if (type instanceof WildcardType) {
-            WildcardType t = (WildcardType) type;
+            WildcardType wildcardType = (WildcardType) type;
             System.out.print("?");
-            printTypes(t.getUpperBounds(), " extends ", " & ", "", false);
-            printTypes(t.getLowerBounds(), " super ", " & ", "", false);
+            printTypes(wildcardType.getUpperBounds(), " extends ", " & ", "", false);
+            printTypes(wildcardType.getLowerBounds(), " super ", " & ", "", false);
         } else if (type instanceof ParameterizedType) {
-            ParameterizedType t = (ParameterizedType) type;
-            Type owner = t.getOwnerType();
+            ParameterizedType parameterizedType = (ParameterizedType) type;
+            Type owner = parameterizedType.getOwnerType();
             if (owner != null) {
                 printType(owner, false);
                 System.out.print(".");
             }
-            printType(t.getRawType(), false);
-            printTypes(t.getActualTypeArguments(), "<", ", ", ">", false);
+            printType(parameterizedType.getRawType(), false);
+            printTypes(parameterizedType.getActualTypeArguments(), "<", ", ", ">", false);
         } else if (type instanceof GenericArrayType) {
-            GenericArrayType t = (GenericArrayType) type;
+            GenericArrayType genericArrayType = (GenericArrayType) type;
             System.out.print("");
-            printType(t.getGenericComponentType(), isDefinition);
+            printType(genericArrayType.getGenericComponentType(), isDefinition);
             System.out.print("[]");
         }
     }
