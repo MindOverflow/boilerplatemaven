@@ -43,5 +43,11 @@
       <artifactId>logback-classic</artifactId>
       <version>${logback.version}</version>
     </dependency>
+    <dependency>
+      <groupId>org.dspace.dependencies</groupId>
+      <artifactId>dspace-perst</artifactId>
+      <version>4.21</version>
+    </dependency>
+
   </dependencies>
 </project>
