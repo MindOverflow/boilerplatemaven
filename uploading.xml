@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database root="4097">
+ <ru.sberbank.mavenboilerplateapp.MyRootClass id="4097">
+  <foreignIndex><ref id="4102"/></foreignIndex>
+  <intKeyIndex><ref id="4109"/></intKeyIndex>
+  <strKeyIndex><ref id="4119"/></strKeyIndex>
+ </ru.sberbank.mavenboilerplateapp.MyRootClass>
+ <org.garret.perst.impl.Btree id="4102" unique="0" type="int">
+  <ref id="4120" key="1001"/>
+  <ref id="4132" key="1001"/>
+  <ref id="4124" key="1002"/>
+  <ref id="4133" key="1002"/>
+  <ref id="4125" key="1003"/>
+  <ref id="4134" key="1003"/>
+  <ref id="4126" key="1004"/>
+  <ref id="4135" key="1004"/>
+  <ref id="4127" key="1005"/>
+  <ref id="4136" key="1005"/>
+ </org.garret.perst.impl.Btree>
+ <org.garret.perst.impl.BtreeFieldIndex id="4109" unique="1" autoinc="0" class="ru.sberbank.mavenboilerplateapp.MyPersistentClass" field="intKey">
+  <ref id="4120" key="1"/>
+  <ref id="4124" key="2"/>
+  <ref id="4125" key="3"/>
+  <ref id="4126" key="4"/>
+  <ref id="4127" key="5"/>
+ </org.garret.perst.impl.BtreeFieldIndex>
+ <org.garret.perst.impl.BtreeFieldIndex id="4119" unique="0" autoinc="0" class="ru.sberbank.mavenboilerplateapp.MyPersistentClass" field="strKey">
+  <ref id="4120" key="A.B"/>
+  <ref id="4132" key="A.B"/>
+  <ref id="4124" key="A.C"/>
+  <ref id="4133" key="A.C"/>
+  <ref id="4127" key="A.X"/>
+  <ref id="4136" key="A.X"/>
+  <ref id="4126" key="A.Y"/>
+  <ref id="4135" key="A.Y"/>
+  <ref id="4125" key="A.Z"/>
+  <ref id="4134" key="A.Z"/>
+ </org.garret.perst.impl.BtreeFieldIndex>
+ <ru.sberbank.mavenboilerplateapp.MyPersistentClass id="4132">
+  <body>"Hello world 1"</body>
+  <intKey>1</intKey>
+  <strKey>"A.B"</strKey>
+ </ru.sberbank.mavenboilerplateapp.MyPersistentClass>
+ <ru.sberbank.mavenboilerplateapp.MyPersistentClass id="4133">
+  <body>"Hello world 2"</body>
+  <intKey>2</intKey>
+  <strKey>"A.C"</strKey>
+ </ru.sberbank.mavenboilerplateapp.MyPersistentClass>
+ <ru.sberbank.mavenboilerplateapp.MyPersistentClass id="4134">
+  <body>"Hello world 3"</body>
+  <intKey>3</intKey>
+  <strKey>"A.Z"</strKey>
+ </ru.sberbank.mavenboilerplateapp.MyPersistentClass>
+ <ru.sberbank.mavenboilerplateapp.MyPersistentClass id="4135">
+  <body>"Hello world 4"</body>
+  <intKey>4</intKey>
+  <strKey>"A.Y"</strKey>
+ </ru.sberbank.mavenboilerplateapp.MyPersistentClass>
+ <ru.sberbank.mavenboilerplateapp.MyPersistentClass id="4136">
+  <body>"Hello world 5"</body>
+  <intKey>5</intKey>
+  <strKey>"A.X"</strKey>
+ </ru.sberbank.mavenboilerplateapp.MyPersistentClass>
+ <ru.sberbank.mavenboilerplateapp.MyPersistentClass id="4120">
+  <body>"Hello world 1"</body>
+  <intKey>1</intKey>
+  <strKey>"A.B"</strKey>
+ </ru.sberbank.mavenboilerplateapp.MyPersistentClass>
+ <ru.sberbank.mavenboilerplateapp.MyPersistentClass id="4124">
+  <body>"Hello world 2"</body>
+  <intKey>2</intKey>
+  <strKey>"A.C"</strKey>
+ </ru.sberbank.mavenboilerplateapp.MyPersistentClass>
+ <ru.sberbank.mavenboilerplateapp.MyPersistentClass id="4125">
+  <body>"Hello world 3"</body>
+  <intKey>3</intKey>
+  <strKey>"A.Z"</strKey>
+ </ru.sberbank.mavenboilerplateapp.MyPersistentClass>
+ <ru.sberbank.mavenboilerplateapp.MyPersistentClass id="4126">
+  <body>"Hello world 4"</body>
+  <intKey>4</intKey>
+  <strKey>"A.Y"</strKey>
+ </ru.sberbank.mavenboilerplateapp.MyPersistentClass>
+ <ru.sberbank.mavenboilerplateapp.MyPersistentClass id="4127">
+  <body>"Hello world 5"</body>
+  <intKey>5</intKey>
+  <strKey>"A.X"</strKey>
+ </ru.sberbank.mavenboilerplateapp.MyPersistentClass>
+</database>
