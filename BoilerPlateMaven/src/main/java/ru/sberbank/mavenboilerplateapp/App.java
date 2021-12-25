@@ -11,7 +11,7 @@ import java.util.Date;
 @Slf4j
 public class App
 {
-    public static void main( String[] args ) throws JAXBException {
+    public static void main(String[] args) throws JAXBException {
         log.info("Starting...");
         Book book = new Book();
         book.setId(1L);
