@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database root="4097">
+ <ru.sberbank.mavenboilerplateapp.Catalog id="4097">
+  <authorIndex><ref id="4107"/></authorIndex>
+  <books><ref id="0"/></books>
+  <descriptionIndex><ref id="4117"/></descriptionIndex>
+  <genreIndex><ref id="4118"/></genreIndex>
+  <idIndex><ref id="4119"/></idIndex>
+  <priceIndex><ref id="4120"/></priceIndex>
+  <publish_dateIndex><ref id="4121"/></publish_dateIndex>
+  <titleIndex><ref id="4122"/></titleIndex>
+ </ru.sberbank.mavenboilerplateapp.Catalog>
+ <org.garret.perst.impl.BtreeFieldIndex id="4107" unique="0" autoinc="0" class="ru.sberbank.mavenboilerplateapp.Book" field="author">
+  <ref id="4132" key="Corets, Eva"/>
+  <ref id="4133" key="Corets, Eva"/>
+  <ref id="4134" key="Corets, Eva"/>
+  <ref id="4141" key="Galos, Mike"/>
+  <ref id="4123" key="Gambardella, Matthew"/>
+  <ref id="4137" key="Knorr, Stefan"/>
+  <ref id="4138" key="Kress, Peter"/>
+  <ref id="4139" key="O&apos;Brien, Tim"/>
+  <ref id="4140" key="O&apos;Brien, Tim"/>
+  <ref id="4131" key="Ralls, Kim"/>
+  <ref id="4135" key="Randall, Cynthia"/>
+  <ref id="4136" key="Thurman, Paula"/>
+ </org.garret.perst.impl.BtreeFieldIndex>
+ <org.garret.perst.impl.BtreeFieldIndex id="4117" unique="0" autoinc="0" class="ru.sberbank.mavenboilerplateapp.Book" field="description">
+  <ref id="4136" key="A deep sea diver finds true love twenty thousand leagues beneath the sea."/>
+  <ref id="4131" key="A former architect battles corporate zombies, an evil sorceress, and her own childhood to become queen of the world."/>
+  <ref id="4138" key="After an inadvertant trip through a Heisenberg Uncertainty Device, James Salway discovers the problems of being quantum."/>
+  <ref id="4132" key="After the collapse of a nanotechnology society in England, the young survivors lay the foundation for a new society."/>
+  <ref id="4137" key="An anthology of horror stories about roaches, centipedes, scorpions  and other insects."/>
+  <ref id="4123" key="An in-depth look at creating applications with XML."/>
+  <ref id="4133" key="In post-apocalypse England, the mysterious agent known only as Oberon helps to create a new life for the inhabitants of London. Sequel to Maeve Ascendant."/>
+  <ref id="4141" key="Microsoft Visual Studio 7 is explored in depth, looking at how Visual Basic, Visual C++, C#, and ASP+ are integrated into a comprehensive development environment."/>
+  <ref id="4139" key="Microsoft&apos;s .NET initiative is explored in detail in this deep programmer&apos;s reference."/>
+  <ref id="4140" key="The Microsoft MSXML3 parser is covered in detail, with attention to XML DOM interfaces, XSLT processing, SAX and more."/>
+  <ref id="4134" key="The two daughters of Maeve, half-sisters, battle one another for control of England. Sequel to Oberon&apos;s Legacy."/>
+  <ref id="4135" key="When Carla meets Paul at an ornithology conference, tempers fly as feathers get ruffled."/>
+ </org.garret.perst.impl.BtreeFieldIndex>
+ <org.garret.perst.impl.BtreeFieldIndex id="4118" unique="0" autoinc="0" class="ru.sberbank.mavenboilerplateapp.Book" field="genre">
+  <ref id="4123" key="Computer"/>
+  <ref id="4139" key="Computer"/>
+  <ref id="4140" key="Computer"/>
+  <ref id="4141" key="Computer"/>
+  <ref id="4131" key="Fantasy"/>
+  <ref id="4132" key="Fantasy"/>
+  <ref id="4133" key="Fantasy"/>
+  <ref id="4134" key="Fantasy"/>
+  <ref id="4137" key="Horror"/>
+  <ref id="4135" key="Romance"/>
+  <ref id="4136" key="Romance"/>
+  <ref id="4138" key="Science Fiction"/>
+ </org.garret.perst.impl.BtreeFieldIndex>
+ <org.garret.perst.impl.BtreeFieldIndex id="4119" unique="1" autoinc="0" class="ru.sberbank.mavenboilerplateapp.Book" field="id">
+  <ref id="4123" key="bk101"/>
+  <ref id="4131" key="bk102"/>
+  <ref id="4132" key="bk103"/>
+  <ref id="4133" key="bk104"/>
+  <ref id="4134" key="bk105"/>
+  <ref id="4135" key="bk106"/>
+  <ref id="4136" key="bk107"/>
+  <ref id="4137" key="bk108"/>
+  <ref id="4138" key="bk109"/>
+  <ref id="4139" key="bk110"/>
+  <ref id="4140" key="bk111"/>
+  <ref id="4141" key="bk112"/>
+ </org.garret.perst.impl.BtreeFieldIndex>
+ <org.garret.perst.impl.BtreeFieldIndex id="4120" unique="0" autoinc="0" class="ru.sberbank.mavenboilerplateapp.Book" field="price">
+  <ref id="4139" key="36.95"/>
+  <ref id="4140" key="36.95"/>
+  <ref id="4135" key="4.95"/>
+  <ref id="4136" key="4.95"/>
+  <ref id="4137" key="4.95"/>
+  <ref id="4123" key="44.95"/>
+  <ref id="4141" key="49.95"/>
+  <ref id="4131" key="5.95"/>
+  <ref id="4132" key="5.95"/>
+  <ref id="4133" key="5.95"/>
+  <ref id="4134" key="5.95"/>
+  <ref id="4138" key="6.95"/>
+ </org.garret.perst.impl.BtreeFieldIndex>
+ <org.garret.perst.impl.BtreeFieldIndex id="4121" unique="0" autoinc="0" class="ru.sberbank.mavenboilerplateapp.Book" field="publish_date">
+  <ref id="4135" key="2000-09-02"/>
+  <ref id="4123" key="2000-10-01"/>
+  <ref id="4136" key="2000-11-02"/>
+  <ref id="4138" key="2000-11-02"/>
+  <ref id="4132" key="2000-11-17"/>
+  <ref id="4140" key="2000-12-01"/>
+  <ref id="4137" key="2000-12-06"/>
+  <ref id="4139" key="2000-12-09"/>
+  <ref id="4131" key="2000-12-16"/>
+  <ref id="4133" key="2001-03-10"/>
+  <ref id="4141" key="2001-04-16"/>
+  <ref id="4134" key="2001-09-10"/>
+ </org.garret.perst.impl.BtreeFieldIndex>
+ <org.garret.perst.impl.BtreeFieldIndex id="4122" unique="0" autoinc="0" class="ru.sberbank.mavenboilerplateapp.Book" field="title">
+  <ref id="4137" key="Creepy Crawlies"/>
+  <ref id="4135" key="Lover Birds"/>
+  <ref id="4140" key="MSXML3: A Comprehensive Guide"/>
+  <ref id="4132" key="Maeve Ascendant"/>
+  <ref id="4139" key="Microsoft .NET: The Programming Bible"/>
+  <ref id="4131" key="Midnight Rain"/>
+  <ref id="4133" key="Oberon&apos;s Legacy"/>
+  <ref id="4138" key="Paradox Lost"/>
+  <ref id="4136" key="Splish Splash"/>
+  <ref id="4134" key="The Sundered Grail"/>
+  <ref id="4141" key="Visual Studio 7: A Comprehensive Guide"/>
+  <ref id="4123" key="XML Developer&apos;s Guide"/>
+ </org.garret.perst.impl.BtreeFieldIndex>
+ <ru.sberbank.mavenboilerplateapp.Book id="4131">
+  <author>"Ralls, Kim"</author>
+  <description>"A former architect battles corporate zombies, an evil sorceress, and her own childhood to become queen of the world."</description>
+  <genre>"Fantasy"</genre>
+  <id>"bk102"</id>
+  <price>"5.95"</price>
+  <publish_date>"2000-12-16"</publish_date>
+  <title>"Midnight Rain"</title>
+ </ru.sberbank.mavenboilerplateapp.Book>
+ <ru.sberbank.mavenboilerplateapp.Book id="4132">
+  <author>"Corets, Eva"</author>
+  <description>"After the collapse of a nanotechnology society in England, the young survivors lay the foundation for a new society."</description>
+  <genre>"Fantasy"</genre>
+  <id>"bk103"</id>
+  <price>"5.95"</price>
+  <publish_date>"2000-11-17"</publish_date>
+  <title>"Maeve Ascendant"</title>
+ </ru.sberbank.mavenboilerplateapp.Book>
+ <ru.sberbank.mavenboilerplateapp.Book id="4133">
+  <author>"Corets, Eva"</author>
+  <description>"In post-apocalypse England, the mysterious agent known only as Oberon helps to create a new life for the inhabitants of London. Sequel to Maeve Ascendant."</description>
+  <genre>"Fantasy"</genre>
+  <id>"bk104"</id>
+  <price>"5.95"</price>
+  <publish_date>"2001-03-10"</publish_date>
+  <title>"Oberon&apos;s Legacy"</title>
+ </ru.sberbank.mavenboilerplateapp.Book>
+ <ru.sberbank.mavenboilerplateapp.Book id="4134">
+  <author>"Corets, Eva"</author>
+  <description>"The two daughters of Maeve, half-sisters, battle one another for control of England. Sequel to Oberon&apos;s Legacy."</description>
+  <genre>"Fantasy"</genre>
+  <id>"bk105"</id>
+  <price>"5.95"</price>
+  <publish_date>"2001-09-10"</publish_date>
+  <title>"The Sundered Grail"</title>
+ </ru.sberbank.mavenboilerplateapp.Book>
+ <ru.sberbank.mavenboilerplateapp.Book id="4135">
+  <author>"Randall, Cynthia"</author>
+  <description>"When Carla meets Paul at an ornithology conference, tempers fly as feathers get ruffled."</description>
+  <genre>"Romance"</genre>
+  <id>"bk106"</id>
+  <price>"4.95"</price>
+  <publish_date>"2000-09-02"</publish_date>
+  <title>"Lover Birds"</title>
+ </ru.sberbank.mavenboilerplateapp.Book>
+ <ru.sberbank.mavenboilerplateapp.Book id="4136">
+  <author>"Thurman, Paula"</author>
+  <description>"A deep sea diver finds true love twenty thousand leagues beneath the sea."</description>
+  <genre>"Romance"</genre>
+  <id>"bk107"</id>
+  <price>"4.95"</price>
+  <publish_date>"2000-11-02"</publish_date>
+  <title>"Splish Splash"</title>
+ </ru.sberbank.mavenboilerplateapp.Book>
+ <ru.sberbank.mavenboilerplateapp.Book id="4137">
+  <author>"Knorr, Stefan"</author>
+  <description>"An anthology of horror stories about roaches, centipedes, scorpions  and other insects."</description>
+  <genre>"Horror"</genre>
+  <id>"bk108"</id>
+  <price>"4.95"</price>
+  <publish_date>"2000-12-06"</publish_date>
+  <title>"Creepy Crawlies"</title>
+ </ru.sberbank.mavenboilerplateapp.Book>
+ <ru.sberbank.mavenboilerplateapp.Book id="4138">
+  <author>"Kress, Peter"</author>
+  <description>"After an inadvertant trip through a Heisenberg Uncertainty Device, James Salway discovers the problems of being quantum."</description>
+  <genre>"Science Fiction"</genre>
+  <id>"bk109"</id>
+  <price>"6.95"</price>
+  <publish_date>"2000-11-02"</publish_date>
+  <title>"Paradox Lost"</title>
+ </ru.sberbank.mavenboilerplateapp.Book>
+ <ru.sberbank.mavenboilerplateapp.Book id="4139">
+  <author>"O&apos;Brien, Tim"</author>
+  <description>"Microsoft&apos;s .NET initiative is explored in detail in this deep programmer&apos;s reference."</description>
+  <genre>"Computer"</genre>
+  <id>"bk110"</id>
+  <price>"36.95"</price>
+  <publish_date>"2000-12-09"</publish_date>
+  <title>"Microsoft .NET: The Programming Bible"</title>
+ </ru.sberbank.mavenboilerplateapp.Book>
+ <ru.sberbank.mavenboilerplateapp.Book id="4140">
+  <author>"O&apos;Brien, Tim"</author>
+  <description>"The Microsoft MSXML3 parser is covered in detail, with attention to XML DOM interfaces, XSLT processing, SAX and more."</description>
+  <genre>"Computer"</genre>
+  <id>"bk111"</id>
+  <price>"36.95"</price>
+  <publish_date>"2000-12-01"</publish_date>
+  <title>"MSXML3: A Comprehensive Guide"</title>
+ </ru.sberbank.mavenboilerplateapp.Book>
+ <ru.sberbank.mavenboilerplateapp.Book id="4141">
+  <author>"Galos, Mike"</author>
+  <description>"Microsoft Visual Studio 7 is explored in depth, looking at how Visual Basic, Visual C++, C#, and ASP+ are integrated into a comprehensive development environment."</description>
+  <genre>"Computer"</genre>
+  <id>"bk112"</id>
+  <price>"49.95"</price>
+  <publish_date>"2001-04-16"</publish_date>
+  <title>"Visual Studio 7: A Comprehensive Guide"</title>
+ </ru.sberbank.mavenboilerplateapp.Book>
+ <ru.sberbank.mavenboilerplateapp.Book id="4123">
+  <author>"Gambardella, Matthew"</author>
+  <description>"An in-depth look at creating applications with XML."</description>
+  <genre>"Computer"</genre>
+  <id>"bk101"</id>
+  <price>"44.95"</price>
+  <publish_date>"2000-10-01"</publish_date>
+  <title>"XML Developer&apos;s Guide"</title>
+ </ru.sberbank.mavenboilerplateapp.Book>
+</database>
