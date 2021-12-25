@@ -42,6 +42,9 @@ public class App
         marshaller.marshal(employees, System.out);
         // Когда мы запустим код, мы можем проверить результат в файле book.xml
         marshaller.marshal(employees, new File("./employees.xml"));
+        Employees employeesRead = (Employees) context.createUnmarshaller().unmarshal(new FileReader("./employees.xml"));
+        log.info(employeesRead.toString());
+
         log.info("The end");
     }
 }
