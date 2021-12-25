@@ -1,6 +1,7 @@
 package ru.sberbank.mavenboilerplateapp;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.garret.perst.Persistent;
 
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
@@ -9,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 
 @XmlRootElement(name = "book")
 @XmlType(propOrder = { "id", "author", "title", "genre", "price", "publish_date", "description" })
-public class Book {
+public class Book extends Persistent {
     private String id;
     private String author;
     private String title;
@@ -18,6 +19,18 @@ public class Book {
     private String publish_date;
     private String description;
 
+    public Book() {
+
+    }
+    public Book(String id, String author, String title, String genre, String price, String publish_date, String description) {
+        this.id = id;
+        this.author = author;
+        this.title = title;
+        this.genre = genre;
+        this.price = price;
+        this.publish_date = publish_date;
+        this.description = description;
+    }
     public String getId() {
         return id;
     }
