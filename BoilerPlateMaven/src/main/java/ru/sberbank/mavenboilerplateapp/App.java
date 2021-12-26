@@ -1,5 +1,7 @@
 package ru.sberbank.mavenboilerplateapp;
 
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.opencsv.bean.CsvToBeanBuilder;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.input.BOMInputStream;
@@ -12,11 +14,13 @@ import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
 
+
 @Slf4j
 public class App
 {
-    public static void main(String[] args) throws JAXBException, FileNotFoundException, ClassNotFoundException {
+    public static void main(String[] args) throws JAXBException, IOException, ClassNotFoundException {
         log.info("Starting...");
+        // XML
         // JAXBContext представляет как бы клиентскую входную точку для JAXB API
         // По умолчанию, JAXB не форматирует XML-документ
         JAXBContext context = JAXBContext.newInstance(Catalog.class);
@@ -65,6 +69,7 @@ public class App
             System.err.println("Export failed: " + x);
         }
 
+        // CSV
         FileInputStream fileInputStream = new FileInputStream("./books.csv");
         InputStreamReader inputStreamReader = new InputStreamReader(new BOMInputStream(fileInputStream), StandardCharsets.UTF_8);
         BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
@@ -73,6 +78,15 @@ public class App
             .withType(Book.class)
             .build()
             .parse();
+
+        // JSON
+        ObjectMapper objectMapper = new ObjectMapper();
+        List<Language> languageList = objectMapper
+            .readValue(
+                new File("./languages.json"),
+                new TypeReference<List<Language>>() {}
+        );
+        languageList.forEach(x -> System.out.println(x.toString()));
 
         db.close();
         log.info("The end");
