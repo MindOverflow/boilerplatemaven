@@ -65,15 +65,12 @@ public class App
             System.err.println("Export failed: " + x);
         }
 
-        //inputStreamReader = new InputStreamReader(new BOMInputStream(fileInputStream), StandardCharsets.UTF_8);
-        final String fileName = "src/main/resources/questions.csv";
-
         FileInputStream fileInputStream = new FileInputStream("./books.csv");
         InputStreamReader inputStreamReader = new InputStreamReader(new BOMInputStream(fileInputStream), StandardCharsets.UTF_8);
         BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
 
-        List<BookCsv> bookCsvList = new CsvToBeanBuilder<BookCsv>(bufferedReader)
-            .withType(BookCsv.class)
+        List<Book> bookCsvList = new CsvToBeanBuilder<Book>(bufferedReader)
+            .withType(Book.class)
             .build()
             .parse();
 
