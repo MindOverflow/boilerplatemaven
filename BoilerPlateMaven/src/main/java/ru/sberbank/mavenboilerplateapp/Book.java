@@ -1,5 +1,6 @@
 package ru.sberbank.mavenboilerplateapp;
 
+import com.opencsv.bean.CsvBindByName;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.garret.perst.Persistent;
 
@@ -11,12 +12,19 @@ import javax.xml.bind.annotation.XmlType;
 @XmlRootElement(name = "book")
 @XmlType(propOrder = { "id", "author", "title", "genre", "price", "publish_date", "description" })
 public class Book extends Persistent {
+    @CsvBindByName(column = "id")
     private String id;
+    @CsvBindByName(column = "author")
     private String author;
+    @CsvBindByName(column = "title")
     private String title;
+    @CsvBindByName(column = "genre")
     private String genre;
+    @CsvBindByName(column = "price")
     private String price;
+    @CsvBindByName(column = "publish_date")
     private String publish_date;
+    @CsvBindByName(column = "description")
     private String description;
 
     public Book() {
