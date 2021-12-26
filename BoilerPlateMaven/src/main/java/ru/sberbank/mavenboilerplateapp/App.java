@@ -1,5 +1,6 @@
 package ru.sberbank.mavenboilerplateapp;
 
+import com.opencsv.bean.CsvToBeanBuilder;
 import lombok.extern.slf4j.Slf4j;
 import org.garret.perst.Storage;
 import org.garret.perst.StorageFactory;
@@ -7,11 +8,12 @@ import org.garret.perst.StorageFactory;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import java.io.*;
+import java.util.List;
 
 @Slf4j
 public class App
 {
-    public static void main(String[] args) throws JAXBException, FileNotFoundException {
+    public static void main(String[] args) throws JAXBException, FileNotFoundException, ClassNotFoundException {
         log.info("Starting...");
         // JAXBContext представляет как бы клиентскую входную точку для JAXB API
         // По умолчанию, JAXB не форматирует XML-документ
@@ -60,6 +62,9 @@ public class App
         } catch (IOException x) {
             System.err.println("Export failed: " + x);
         }
+
+        List<BookCsv> bookCsvList = new CsvToBeanBuilder<BookCsv>(new FileReader("./books.csv"))
+                .withType(BookCsv.class).build().parse();
 
         db.close();
         log.info("The end");
