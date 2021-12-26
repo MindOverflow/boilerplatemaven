@@ -64,7 +64,9 @@ public class App
         }
 
         List<BookCsv> bookCsvList = new CsvToBeanBuilder<BookCsv>(new FileReader("./books.csv"))
-                .withType(BookCsv.class).build().parse();
+            .withType(BookCsv.class)
+            .build()
+            .parse();
 
         db.close();
         log.info("The end");
