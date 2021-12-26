@@ -2,12 +2,14 @@ package ru.sberbank.mavenboilerplateapp;
 
 import com.opencsv.bean.CsvToBeanBuilder;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.io.input.BOMInputStream;
 import org.garret.perst.Storage;
 import org.garret.perst.StorageFactory;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 
 @Slf4j
@@ -63,8 +65,12 @@ public class App
             System.err.println("Export failed: " + x);
         }
 
-        List<BookCsv> bookCsvList = new CsvToBeanBuilder<BookCsv>(new FileReader("./books.csv"))
-            .withType(BookCsv.class)
+        FileInputStream fileInputStream = new FileInputStream("./books.csv");
+        InputStreamReader inputStreamReader = new InputStreamReader(new BOMInputStream(fileInputStream), StandardCharsets.UTF_8);
+        BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+
+        List<Book> bookCsvList = new CsvToBeanBuilder<Book>(bufferedReader)
+            .withType(Book.class)
             .build()
             .parse();
 
