@@ -1,19 +1,16 @@
 package ru.glutenfre.mavenboilerplateapp;
 
-import lombok.extern.slf4j.Slf4j;
 import org.garret.perst.Storage;
 import org.garret.perst.StorageFactory;
-import org.xml.sax.SAXException;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
-import javax.xml.parsers.ParserConfigurationException;
 import java.io.*;
 
 
 public class App
 {
-    public static void main(String[] args) throws JAXBException, IOException, SAXException, ParserConfigurationException {
+    public static void main(String[] args) throws JAXBException, IOException {
         System.out.println("Starting...");
         // JAXBContext представляет как бы клиентскую входную точку для JAXB API
         // По умолчанию, JAXB не форматирует XML-документ
