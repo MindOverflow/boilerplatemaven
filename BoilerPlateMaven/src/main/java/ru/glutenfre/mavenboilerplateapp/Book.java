@@ -89,7 +89,13 @@ public class Book extends Persistent {
 
     @Override
     public String toString() {
-        return ToStringBuilder.reflectionToString(this);
+        return "[ id = " + getId() +
+                ", author = " + getAuthor() +
+                ", title = " + getTitle() +
+                ", genre = " + getGenre() +
+                ", price = " + getPrice() +
+                ", publish_date = " + getPublish_date() +
+                ", description = " + getDescription() + " ]";
     }
 
 }

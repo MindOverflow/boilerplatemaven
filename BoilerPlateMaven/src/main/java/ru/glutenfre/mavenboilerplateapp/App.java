@@ -63,15 +63,14 @@ public class App
 
         InputStreamReader inputStreamReader = new InputStreamReader(fileInputStream);
 
-        BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
-        StringBuilder resultStringBuilder = new StringBuilder();
-        try (BufferedReader br = new BufferedReader(inputStreamReader)) {
+        StringBuilder exportedXml = new StringBuilder();
+        try (BufferedReader bufferedReader = new BufferedReader(inputStreamReader)) {
             String line;
-            while ((line = br.readLine()) != null) {
-                resultStringBuilder.append(line).append("\n");
+            while ((line = bufferedReader.readLine()) != null) {
+                exportedXml.append(line).append("\n");
             }
         }
-        System.out.println(resultStringBuilder.toString());
+        System.out.println(exportedXml.toString());
         db.close();
         System.out.println("The end");
     }

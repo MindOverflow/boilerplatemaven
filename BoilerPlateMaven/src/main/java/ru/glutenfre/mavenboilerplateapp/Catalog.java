@@ -58,6 +58,6 @@ public class Catalog extends Persistent {
 
     @Override
     public String toString() {
-        return ToStringBuilder.reflectionToString(this);
+        return "[ books = " + getBooks().toString() + " ]";
     }
 }
