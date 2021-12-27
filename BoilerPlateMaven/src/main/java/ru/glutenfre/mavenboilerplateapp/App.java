@@ -1,17 +1,19 @@
-package ru.sberbank.mavenboilerplateapp;
+package ru.glutenfre.mavenboilerplateapp;
 
 import lombok.extern.slf4j.Slf4j;
 import org.garret.perst.Storage;
 import org.garret.perst.StorageFactory;
+import org.xml.sax.SAXException;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
+import javax.xml.parsers.ParserConfigurationException;
 import java.io.*;
 
 @Slf4j
 public class App
 {
-    public static void main(String[] args) throws JAXBException, FileNotFoundException {
+    public static void main(String[] args) throws JAXBException, IOException, SAXException, ParserConfigurationException {
         log.info("Starting...");
         // JAXBContext представляет как бы клиентскую входную точку для JAXB API
         // По умолчанию, JAXB не форматирует XML-документ
@@ -60,7 +62,19 @@ public class App
         } catch (IOException x) {
             System.err.println("Export failed: " + x);
         }
+        FileInputStream fileInputStream = new FileInputStream(uploadPath);
 
+        InputStreamReader inputStreamReader = new InputStreamReader(fileInputStream);
+
+        BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+        StringBuilder resultStringBuilder = new StringBuilder();
+        try (BufferedReader br = new BufferedReader(inputStreamReader)) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                resultStringBuilder.append(line).append("\n");
+            }
+        }
+        log.info(resultStringBuilder.toString());
         db.close();
         log.info("The end");
     }

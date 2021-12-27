@@ -1,4 +1,4 @@
-package ru.sberbank.mavenboilerplateapp;
+package ru.glutenfre.mavenboilerplateapp;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.garret.perst.Persistent;
