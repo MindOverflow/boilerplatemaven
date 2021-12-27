@@ -10,17 +10,17 @@ import javax.xml.bind.JAXBException;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.*;
 
-@Slf4j
+
 public class App
 {
     public static void main(String[] args) throws JAXBException, IOException, SAXException, ParserConfigurationException {
-        log.info("Starting...");
+        System.out.println("Starting...");
         // JAXBContext представляет как бы клиентскую входную точку для JAXB API
         // По умолчанию, JAXB не форматирует XML-документ
         JAXBContext context = JAXBContext.newInstance(Catalog.class);
 
         Catalog catalog = (Catalog) context.createUnmarshaller().unmarshal(new FileReader("./books.xml"));
-        log.info(catalog.toString());
+        // System.out.println(catalog.toString());
 
         Storage db = StorageFactory.getInstance().createStorage();
         db.open("my_pretty_perst_db.dbs");
@@ -74,8 +74,8 @@ public class App
                 resultStringBuilder.append(line).append("\n");
             }
         }
-        log.info(resultStringBuilder.toString());
+        System.out.println(resultStringBuilder.toString());
         db.close();
-        log.info("The end");
+        System.out.println("The end");
     }
 }
