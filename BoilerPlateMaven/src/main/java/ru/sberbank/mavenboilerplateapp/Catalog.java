@@ -1,59 +1,68 @@
 package ru.sberbank.mavenboilerplateapp;
 
+import com.fasterxml.jackson.annotation.*;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.garret.perst.FieldIndex;
 import org.garret.perst.Persistent;
 import org.garret.perst.Storage;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
 import java.util.List;
 
-@XmlRootElement(name = "catalog")
-@XmlAccessorType(XmlAccessType.FIELD)
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Catalog extends Persistent {
-    @XmlElement(name = "book")
-    private List<Book> books = null;
+    private List<Book> books;
 
+    @JsonIgnore
     public FieldIndex<Book> idIndex;
+    @JsonIgnore
     public FieldIndex<Book> authorIndex;
+    @JsonIgnore
     public FieldIndex<Book> titleIndex;
+    @JsonIgnore
     public FieldIndex<Book> genreIndex;
+    @JsonIgnore
     public FieldIndex<Book> priceIndex;
+    @JsonIgnore
     public FieldIndex<Book> publish_dateIndex;
+    @JsonIgnore
     public FieldIndex<Book> descriptionIndex;
+
+    @JsonProperty("book")
+    @JsonGetter("book")
+    public List<Book> getBook() {
+        return books;
+    }
+
+    @JsonProperty("book")
+    @JsonSetter("book")
+    public void setBook(List<Book> books) {
+        this.books = books;
+    }
 
     public Catalog() {
 
     }
+
     public Catalog(List<Book> books) {
         this.books = books;
     }
+
     public Catalog(Storage db) {
         super(db);
         idIndex =
-            db.<Book>createFieldIndex(Book.class, "id", true);
+                db.<Book>createFieldIndex(Book.class, "id", true);
         authorIndex =
-            db.<Book>createFieldIndex(Book.class, "author", false);
+                db.<Book>createFieldIndex(Book.class, "author", false);
         titleIndex =
-            db.<Book>createFieldIndex(Book.class, "title", false);
+                db.<Book>createFieldIndex(Book.class, "title", false);
         genreIndex =
-            db.<Book>createFieldIndex(Book.class, "genre", false);
+                db.<Book>createFieldIndex(Book.class, "genre", false);
         priceIndex =
-            db.<Book>createFieldIndex(Book.class, "price", false);
+                db.<Book>createFieldIndex(Book.class, "price", false);
         publish_dateIndex =
-            db.<Book>createFieldIndex(Book.class, "publish_date", false);
+                db.<Book>createFieldIndex(Book.class, "publish_date", false);
         descriptionIndex =
-            db.<Book>createFieldIndex(Book.class, "description", false);
-    }
-    public List<Book> getBooks() {
-        return books;
-    }
-
-    public void setBooks(List<Book> books) {
-        this.books = books;
+                db.<Book>createFieldIndex(Book.class, "description", false);
     }
 
     @Override
